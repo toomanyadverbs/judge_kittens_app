@@ -1,0 +1,14 @@
+div {
+  border: solid 2px #3B52FF;
+/*  padding:10px;
+  margin:10px;*/
+  box-shadow: inset 1em 2px yellow;
+}
+
+.hidden {
+  display: none;
+}
+
+.frame {
+  display:inline-block;
+}
