@@ -17,7 +17,7 @@
   </div>
   <div class="row"><!--toggle judgement type-->
     <div class="col-md-2"></div>
-    <div class="cuteToggle col-md-5 cute">
+    <div class="cuteToggle selectedJudgement col-md-5 cute">
       <h4>Judge by Cuteness</h4>
     </div>
     <div class="majToggle col-md-3 maj">
@@ -27,18 +27,19 @@
   </div>
   <div class="row"><!--question-->
     <div class="col-md-2"></div>
-    <div class="question toggle toggleQuestion col-md-8">
+    <div class="question toggle toggleQuestion cute col-md-8">
       <h5>Which cat is cuter?</h5>
     </div>
     <div class="col-md-2"></div>
   </div>
   <div class="row"><!--first cats section-->
     <div class="col-md-2"></div>
-    <div class="cats toggle">
-      <div class="frame col-md-4">
-        <img id="catOne" src="imgs/Gus.jpg">
+    <div class="cats">
+      <div class="frame toggle cute col-md-4">
+        <img id="catImgId">
+        <p id="catNameID"></p>
       </div>
-      <div class = "frame col-md-4">
+      <div class = "frame toggle cute col-md-4">
         <img id="catTwo" src="imgs/Colonel_Meow.jpg">
       </div>
     </div>
@@ -55,7 +56,7 @@
 <!--SCRIPTS-->
   <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
   <script src="scripts/app.js" type="text/javascript"></script>
-  <script src="boostrap-3.3.4-dist/js/bootstrap.min.js"></script>
+  <script src="bootstrap-3.3.4-dist/js/bootstrap.min.js"></script>
 </body>
 </html>
 
