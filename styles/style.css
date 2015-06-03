@@ -12,3 +12,15 @@ div {
 .frame {
   display:inline-block;
 }
+
+.cute {
+  background-color: pink;
+}
+
+.maj {
+  background-color:yellow;
+}
+
+.selectedJudgement {
+  border: solid 1px red;
+}
