@@ -10,7 +10,7 @@
 <body>
   <div class ="row"> <!--TITLE-->
     <div class="col-md-2"></div>
-    <div class="title_box col-md-8">
+    <div class="title col-md-8">
       <h1>Judge the Kitties</h1>
     </div>
     <div class="col-md-2"></div>
@@ -34,24 +34,32 @@
   </div>
   <div class="row"><!--first cats section-->
     <div class="col-md-2"></div>
-    <div class="cats">
-      <div class="frame toggle cute col-md-4">
-        <img id="catImgId">
-        <p id="catNameID"></p>
+    <div class="cats col-md-8">
+      <div class="frame toggle cute">
+        <img id="catImgId" src ="imgs/Gus.jpg">
       </div>
-      <div class = "frame toggle cute col-md-4">
-        <img id="catTwo" src="imgs/Colonel_Meow.jpg">
+      <div class="frame toggle cute">
+        <img id="#catImgId" src="imgs/Colonel_Meow.jpg">
       </div>
     </div>
     <div class="col-md-2"></div>
   </div>
-  <div class ="row"><!--footer-->
+  <div class="row"><!--footer-->
     <div class="col-md-2"></div>
-    <div class="footer col-md-8">
+    <div id="catName" class="footer col-md-8">
       <p>Created by L Grimes</p>
     </div>
     <div class="col-md-2"></div>
   </div>
+
+  <!--LOGIN SHTUFF-->
+  <input id="email" type="text" value="" placeholder="e-mail">
+  <input id="password" type="password" value="" placeholder="password">
+  <input id="get-token" type="button" value="Get Token">
+  <br>
+  <label for="token">Token:</label>
+  <input id="token" placeholder="empty">
+
 
 <!--SCRIPTS-->
   <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>

@@ -1,30 +1,43 @@
-div {
-  border: solid 2px #3B52FF;
-/*  padding:10px;
-  margin:10px;*/
-  box-shadow: inset 1em 2px yellow;
+/* POSITIONING */
+
+.frame {
+  display:inline-block;
+}
+
+.title {
+  text-align: center;
 }
 
 .hidden {
   display: none;
 }
 
-.frame {
-  display:inline-block;
+/* DISPLAY */
+
+div {
+  border: solid 1px #C9DAFF;
+/*  padding:10px;
+  margin:10px;
+  box-shadow: inset 1em 2px yellow;*/
+}
+
+#catImgId {
 }
 
 .cute {
-  background-color: pink;
+  background-color: #FFBABA;
 }
 
 .maj {
-  background-color:yellow;
+  background-color:#FFDF75;
 }
 
 .selectedJudgement {
   border: solid 1px red;
 }
 
+
+/*
 @-webkit-keyframes slideInLeft {
   0% {
     -webkit-transform: translate3d(-100%, 0, 0);
@@ -86,3 +99,4 @@ div {
   -webkit-animation-name: slideInRight;
   animation-name: slideInRight;
 }
+*/
