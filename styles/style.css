@@ -24,6 +24,11 @@ div {
 #catImgId {
 }
 
+img {
+  width:100%;
+  height:100%;
+}
+
 .cute {
   background-color: #FFBABA;
 }
@@ -32,29 +37,28 @@ div {
   background-color:#FFDF75;
 }
 
-.selectedJudgement {
+/*.selectedJudgement {
   border: solid 1px red;
-}
-
-.outmost{
-}
+}*/
 
 .outer {
+  margin: 10px;
 }
 
 .frame {
+  background-color:#FFBB00;
   padding:10px;
-  background-color:#FFC400;
 }
 
-.label {
-  background-color: #222222;
+.catLabel {
+  background-color:#E6A800;
+  color:#FFF5DB;
+  margin: 5px auto 5px auto;
+  padding:5px;
 }
 
 .framepic {
-  width:300px
-  background-color:#FFC400;
-  height:20px
+  padding:;
 }
 
 
