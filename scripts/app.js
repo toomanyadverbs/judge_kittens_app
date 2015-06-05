@@ -9,21 +9,51 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 };
 
+function getTwoRandomInt(min, max) {
+  var first = Math.floor(Math.random() * (max - min)) + min;
+
+  do {var second = Math.floor(Math.random() * (max - min)) + min }
+  while (first === second);
+  return {
+      first: first,
+      second: second,
+  }
+}
+
+var randomIntegers = getTwoRandomInt(0, 9);
+var first = randomIntegers.first;
+var second = randomIntegers.second;
 
 //call functions after document is ready
 $(document).ready(function(){
 
+var catUrlOne = 'http://localhost:3000/cats/' + first
+var catUrlTwo = 'http://localhost:3000/cats/' + second
+
   $.ajax({
-    url : 'http://localhost:3000/cats/1',
+    url: catUrlOne,
     type: 'GET',
     data: 'json',
-  }).done(function(cat){
-    console.log(cat);
-    $('#catName').html("<p>Cat Name:" + cat.name + "</p>");
-    $('#catImageId').attr("src", "http://localhost:3000/" + cat.pic);
+  }).done(function(cat_data_one){
+    console.log(cat_data_one);
+    $('#catLabelOne').html('Name: ' + cat_data_one.name + '<br>Owner: ' + cat_data_one.owner);
+    $('#catImgIdOne').attr("src", "http://localhost:3000/" + cat_data_one.pic);
   }).fail(function(){
     console.log('error is' + error)
   });
+
+  $.ajax({
+    url: catUrlTwo,
+    type: 'GET',
+    data: 'json',
+  }).done(function(cat_data_two){
+    console.log(cat_data_two);
+    $('#catLabelTwo').html('Name: ' + cat_data_two.name + '<br>Owner: ' + cat_data_two.owner);
+    $('#catImgIdTwo').attr("src", "http://localhost:3000/" + cat_data_two.pic);
+  }).fail(function(){
+    console.log('error is' + error)
+  });
+
 
   $(".majToggle").click(function(){
     $("div").find(".selectedJudgement").addClass("col-md-3").removeClass("selectedJudgement col-md-5");

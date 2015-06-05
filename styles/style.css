@@ -36,6 +36,28 @@ div {
   border: solid 1px red;
 }
 
+.outmost{
+}
+
+.outer {
+}
+
+.frame {
+  padding:10px;
+  background-color:#FFC400;
+}
+
+.label {
+  background-color: #222222;
+}
+
+.framepic {
+  width:300px
+  background-color:#FFC400;
+  height:20px
+}
+
+
 
 /*
 @-webkit-keyframes slideInLeft {
