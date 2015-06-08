@@ -25,6 +25,8 @@ Recommended Use:
 
 This concept was introduced to me as a drinking game. Ideally, the cats are displayed on a scren visible to all; the group argues over which cat they think is cuter. A cat is selected and its stats are viewed: one drinks if the cat that was selected was not the popular winner according to its stats. Much shrieking over kittens ensues.
 
+However, it ought to be equally fun to be able to see how your cat does against your friend's cats, and against famous Internet cats, in the eyes of anonymous masses. Everyone thinks their pet is the cutest; who can resist an opportunity for proof?
+
 _____________________
 Bugs:
 
