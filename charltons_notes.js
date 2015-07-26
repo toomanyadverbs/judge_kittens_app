@@ -1,7 +1,9 @@
-To run ruby server:
-ruby -run -e httpd . -p3000
+To run ruby server: ruby - run - e httpd. - p5000
 
-rails server -p3000
+
+//back-end:
+//MAKE SURE POSTGRES IS RUNNING
+rails server - p3000
 // Take 1:
 
 $.ajax({
@@ -24,14 +26,14 @@ $.ajax({
 // Owned by <span id="cat-owner-one"></p>
 // <img id="cat-image-one" src="">
 
-var loadCat = function (position, id) {
-    var catNameId = '#cat-name-' + position;
-    var catOwnerId = '#cat-owner-' + position;
-    var catImageId = '#cat-image-' + position;
+var loadCat = function(position, id) {
+  var catNameId = '#cat-name-' + position;
+  var catOwnerId = '#cat-owner-' + position;
+  var catImageId = '#cat-image-' + position;
 
-    $.ajax({
-      type: GET,
-      url: 'http://localhost:5000/cat/' + id
+  $.ajax({
+    type: GET,
+    url: 'http://localhost:5000/cat/' + id
   }).done(function(response) {
     // we expect response to be a JSON string which, when parsed,
     // represents our cat.
@@ -39,9 +41,9 @@ var loadCat = function (position, id) {
     $(catNameId).text(cat.name);
     $(catOwnerId).text(cat.owner);
     $(catImageId).attr("src", cat.pic);
-      }).fail(function(error){
-        console.log('GET /cat/:id call failed, error is ' + error);
-    });
+  }).fail(function(error) {
+    console.log('GET /cat/:id call failed, error is ' + error);
+  });
 };
 
 loadCat('one', 3);

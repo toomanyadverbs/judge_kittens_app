@@ -4,31 +4,34 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title></title>
-  <link rel="stylesheet" href="styles/style.css">
+  <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lobster+Two' rel='stylesheet' type='text/css'>
+    <link href="http://fonts.googleapis.com/css?family=Cabin" rel="stylesheet" type="text/css">
   <link href="bootstrap-3.3.4-dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
   <div class ="row"> <!--TITLE-->
     <div class="col-md-2"></div>
     <div class="title col-md-8">
-      <h1>Judge the Kitties</h1>
+      <h1>Judge <span class="h1straight">the</span> Kitties!</h1>
     </div>
     <div class="col-md-2"></div>
   </div>
   <div class="row"><!--toggle judgement type-->
     <div class="col-md-2"></div>
     <div class="cuteToggle selectedJudgement col-md-5 cute">
-      <h4>Judge by Cuteness</h4>
+      <h4>Judge <span class="h4straight"> by </span> Cuteness</h4>
     </div>
     <div class="majToggle col-md-3 maj">
-      <h4>Judge by Majesty</h4>
+      <h4>Judge <span class="h4straight"> by </span> Majesty</h4>
     </div>
     <div class="col-md-2"></div>
   </div>
   <div class="row"><!--question-->
     <div class="col-md-2"></div>
     <div class="question toggle toggleQuestion cute col-md-8">
-      <h5>Which cat is cuter?</h5>
+      <h3>Which cat is cuter?</h3>
     </div>
     <div class="col-md-2"></div>
   </div>
@@ -37,24 +40,24 @@
   <div class="catContainer">
     <div class="outmost col-md-4 toggle cute">
     <div class="outer">
-      <img class="framepic" src="">
+      <img class="framepic" src="imgs/frame_top.png">
       <div class="frame catOne">
         <img id="catImgIdOne" src ="">
         <div class="catLabel" id="catLabelOne">Name:</div>
-        <div class="catLabel ribbons"></div>
+        <div class="catLabel" id="catRibbonsOne"></div>
       </div>
-      <img class="framepic" src="">
+      <img class="framepic" src="imgs/frame_bottom.png">
     </div>
     </div>
     <div class="outmost col-md-4 toggle cute">
     <div class="outer">
-      <img class="framepic" src="">
+      <img class="framepic" src="imgs/frame_top.png">
       <div class="frame catTwo">
         <img id="catImgIdTwo" src ="">
         <div class="catLabel" id="catLabelTwo">Name:</div>
-        <div class="catLabel ribbons"></div>
+        <div class="catLabel" id="catRibbonsTwo"></div>
       </div>
-      <img class="framepic" src="">
+      <img class="framepic" src="imgs/frame_bottom.png">
     </div>
     </div>
   </div>
@@ -71,7 +74,7 @@
   <!--LOGIN SHTUFF-->
   <div id="row">
      <div class="col-md-2"></div>
-    <div class="footer col-md-8">
+    <div class="footer col-md-8 hidden">
   <input id="email" type="text" value="" placeholder="e-mail">
   <input id="password" type="password" value="" placeholder="password">
   <input id="get-token" type="button" value="Get Token">
