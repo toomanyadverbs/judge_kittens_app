@@ -9,6 +9,7 @@
 
 .title {
   text-align: center;
+  background-color: #FFCC33;
 }
 
 .hidden {
@@ -26,6 +27,7 @@
 h1 {
   font-family: 'Lobster';
   font-size: 34px;
+  color: #CC5500;
 }
 
 .h1straight {
@@ -35,6 +37,7 @@ h1 {
 
 h3 {
   font-family: 'Cabin';
+  font-size: 22px;
 }
 
 h4 {
@@ -58,6 +61,7 @@ body {
   font-family: 'Cabin' Arial sans-serif;
   font-size: 15px;
   color: #FF9900;
+  background-color: #FF9900;
 }
 
 #catImgIdOne {
@@ -74,12 +78,14 @@ img {
 }
 
 .cute {
-  background-color: #277373;
-  /*#FFDF75; #2C916F*/
+  background-color: #FFEFA8;
+  /*#FFDF75; #2C916F 277373*/
 }
 
 .maj {
-  background-color: #732773;
+  background-color: #CC5500;
+
+  /*#732773;*/
 }
 
 /*.selectedJudgement {
@@ -91,7 +97,6 @@ img {
 }
 
 .frame {
-  background-color:#FFBB00;
   background-color: #FFCC33;
   border-left: 2px solid #FF9933;
   border-right: 2px solid #FF9933;
