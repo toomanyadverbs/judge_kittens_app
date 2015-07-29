@@ -25,7 +25,11 @@ var randomIntegers = getTwoRandomInt(1, 15);
 var first = randomIntegers.first;
 var second = randomIntegers.second;
 
-//call functions after document is ready
+
+//--------------------------
+//-----DOCUMENT READY-------
+//--------------------------
+
 $(document).ready(function() {
 
   var backEndUrl = 'http://localhost:3000/'
@@ -35,11 +39,7 @@ $(document).ready(function() {
 
 
   //TO STORE Cats in browser:
-
-  //TRY: local storage??
-
-
-  // constructor function for a Cat
+  // constructor function for Cat
   function Cat(id, name, owner, pic, ct_jdgmts_cute, ct_wins_cute, ct_jdgmts_maj, ct_wins_maj) {
     this.id = id;
     this.name = name;
@@ -51,23 +51,12 @@ $(document).ready(function() {
     this.ct_wins_maj = ct_wins_maj
   };
 
-  // Class method to create a cat using the backend API
-  // Cat.create = function(){
-  //   var catData = {cat: {
-  //     name: $catName.val(),
-  //     owner: $catOwner.val(),
-  //     pic: $catPic.val(),
-  //     ct_jdgmts_cute: $ct_jdgmts_cute.val(),
-  //     ct_wins_cute: $ct_wins_cute.val(),
-  //     ct_jdgmts_maj: $ct_jdgmts_maj.val(),
-  //     ct_wins_maj: $ct_wins_maj(),
-  //   }};
-  // };
-
   var catOne;
   var catTwo;
 
+  //---------------------------
   // GET request to fill out Cat tables One and Two in the browser storage
+  //---------------------------
   $.ajax({
     url: catUrlOne,
     type: 'GET',
@@ -105,57 +94,34 @@ $(document).ready(function() {
     }); // end of $.ajax
 
 
+  //-------------------------------------
+  //--Toggle Majesty or Cute judgement---
+  //-------------------------------------
 
-  // //GET cat imgs:
-  //   $.ajax({
-  //     url: catUrlOne,
-  //     type: 'GET',
-  //     data: 'json',
-  //   }).done(function(cat_data_one){
-  //     //TRY: localStorage.setItem('token', data.token) - Hogue's solution for logins (data will be stored even after browser closes)
-  //     //TRY: (actually) returning a Cat.new here; then you might be able to reference it! (Did I already do this, though?)
-  //     $('#catLabelOne').html('Name: ' + cat_data_one.name + ', Owner: ' + cat_data_one.owner);
-  //     $('#catImgIdOne').data('id', cat_data_one.id);
-  //     $('#catImgIdOne').attr('data-catWinsCute', cat_data_one.ct_wins_cute);
-  //     $('#catImgIdOne').attr("src", backEndUrl + cat_data_one.pic);
-  //   }).fail(function(){
-  //     console.log('error is' + error)
-  //   });
-
-  //   $.ajax({
-  //     url: catUrlTwo,
-  //     type: 'GET',
-  //     data: 'json',
-  //   }).done(function(cat_data_two){
-  //     console.log(cat_data_two);
-  //     $('#catLabelTwo').html('Name: ' + cat_data_two.name + ', Owner: ' + cat_data_two.owner);
-  //     $('#catImgIdTwo').data('id', cat_data_two.id);
-  //     $('#catImgIdTwo').attr("src", backEndUrl + cat_data_two.pic);
-  //   }).fail(function(){
-  //     console.log('error is' + error)
-  //   });
-
-  //Toggle Majesty or Cute judgement
   $(".majToggle").click(function() {
     $("div").find(".selectedJudgement").addClass("col-md-3").removeClass("selectedJudgement col-md-5");
     $(this).removeClass("col-md-3").addClass("selectedJudgement col-md-5");
     $("div").find(".toggle").removeClass("cute").addClass("maj");
-    $("div").find(".toggleQuestion").html("<h3>Which cat is more majestic?</h3>")
+    $("div").find(".toggleQuestion").html("<h3>⬐ Which cat is more majestic? &#11022;</h3>")
   });
 
   $(".cuteToggle").click(function() {
     $("div").find(".selectedJudgement").addClass("col-md-3").removeClass("selectedJudgement col-md-5");
     $(this).removeClass("col-md-3").addClass("selectedJudgement col-md-5");
     $("div").find(".toggle").removeClass("maj").addClass("cute");
-    $("div").find(".toggleQuestion").html("<h3>Which cat is cuter?</h3>");
+    $("div").find(".toggleQuestion").html("<h3>⬐ Which cat is cuter? &#11022;</h3>");
   });
 
+  //------------------------------------------------
+  //----------- on click - WIN functions ------------
+  //----------- PATCH wins to db    -----------------
+  //----------- change question to a 'refresh' button--
+  //---------------------------------------------------
 
   var addWin = {
     cat: {}
   };
 
-  //WIN functions - PATCH wins to database
   $("#catImgIdOne").click(function() {
     // var catID = $('#catImgIdOne').data('id');
     // var catJdgmtCount = $('#catImgIdOne').data('ct_jdgmts_cute');
@@ -173,8 +139,8 @@ $(document).ready(function() {
     })
       .done(function() {
         console.log('Added Judgement');
-        $('#catRibbonsOne').html('Winner! Judgements: ' + (catOne.ct_jdgmts_cute + 1) + ', Wins: ' + (catOne.ct_wins_cute + 1));
-        $('#catRibbonsTwo').html('Judgements: ' + (catTwo.ct_jdgmts_cute + 1) + ', Wins: ' + (catTwo.ct_wins_cute));
+        $('#catRibbonsOne').html('<h5>Winner!</h5> Judgements: ' + (catOne.ct_jdgmts_cute + 1) + ', Wins: ' + (catOne.ct_wins_cute + 1));
+        $('#catRibbonsTwo').html('<h5><br/></h5>Judgements: ' + (catTwo.ct_jdgmts_cute + 1) + ', Wins: ' + (catTwo.ct_wins_cute));
       })
       .fail(function() {
         console.log('Error in Posting');
@@ -182,10 +148,13 @@ $(document).ready(function() {
   });
 
   $("#catImgIdTwo").click(function() {
-    var catID = $('#catImgIdTwo').data('id');
-    var catJdgmtCount = $('#catImgIdTwo').data('ct_jdgmts_cute');
-    addWin.cat.id = catID;
-    addWin.cat.ct_jdgmts_cute = catJdgmtCount + 1;
+    // var catID = $('#catImgIdTwo').data('id');
+    // var catJdgmtCount = $('#catImgIdTwo').data('ct_jdgmts_cute');
+    // addWin.cat.id = catID;
+    // addWin.cat.ct_jdgmts_cute = catJdgmtCount + 1;
+    addWin.cat.ct_jdgmts_cute = catTwo.ct_jdgmts_cute + 1;
+    addWin.cat.ct_wins_cute = catTwo.ct_wins_cute + 1;
+    addWin.cat.ct_jdgmts_cute = catOne.ct_jdgmts_cute + 1;
 
     $.ajax({
       url: catUrlTwo,
@@ -195,15 +164,21 @@ $(document).ready(function() {
     })
       .done(function() {
         console.log('Added Judgement')
-        $('.catTwo').children(".ribbons").html('Winner! Judgements: ' + addWin.cat.ct_jdgmts_cute);
+        $('#catRibbonsTwo').html('<h5>Winner!</h5> Judgements: ' + (catTwo.ct_jdgmts_cute + 1) + ', Wins: ' + (catTwo.ct_wins_cute + 1));
+        $('#catRibbonsOne').html('<h5><br/></h5>Judgements: ' + (catOne.ct_jdgmts_cute + 1) + ', Wins: ' + (catOne.ct_wins_cute));
       })
       .fail(function() {
         console.log('Error in Posting');
       });
   });
-}); //<-document ready
+}); //--------------<-document ready
 
 
+
+
+//--------------------------
+//-----USER AUTHENTICATION--
+//--------------------------
 //jquery authenticate and get
 $(function() {
   $('#get-token').on('click', function() {

@@ -115,3 +115,8 @@ img {
   border-left: 2px solid #FF9933;
   border-right: 2px solid #FF9933;
 }
+
+.footer {
+  background-color: #FFCC33;
+  text-align: center;
+}

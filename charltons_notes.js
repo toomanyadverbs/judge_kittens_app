@@ -1,5 +1,4 @@
-To run ruby server: ruby - run - e httpd. - p5000
-
+//To run ruby server: ruby -run -e httpd . -p5000
 
 //back-end:
 //MAKE SURE POSTGRES IS RUNNING
