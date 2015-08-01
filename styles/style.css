@@ -20,6 +20,10 @@
   text-align: center;
 }
 
+.refreshButton {
+  margin: 5px 40%;
+}
+
 /*---------------------*/
 /*------DISPLAY--------*/
 /*---------------------*/
@@ -73,24 +77,16 @@ body {
 }
 
 img {
-  width:100%;
-  height:100%;
+  width:300px;
 }
 
 .cute {
   background-color: #FFEFA8;
-  /*#FFDF75; #2C916F 277373*/
 }
 
 .maj {
   background-color: #CC5500;
-
-  /*#732773;*/
 }
-
-/*.selectedJudgement {
-  border: solid 1px red;
-}*/
 
 .outer {
   margin: 10px;
@@ -114,6 +110,23 @@ img {
 .framepic {
   border-left: 2px solid #FF9933;
   border-right: 2px solid #FF9933;
+  width: 328px;
+}
+
+button {
+  background-color: #FFBB22;
+}
+
+a {
+  color: #CC5500;
+}
+
+a:hover {
+  color: #FF9900;
+}
+
+a:active {
+  color: #FFEFA8;
 }
 
 .footer {

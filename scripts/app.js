@@ -115,8 +115,7 @@ $(document).ready(function() {
   //------------------------------------------------
   //----------- on click - WIN functions ------------
   //----------- PATCH wins to db    -----------------
-  //----------- change question to a 'refresh' button--
-  //---------------------------------------------------
+  //--------------------------------------------------
 
   var addWin = {
     cat: {}
@@ -141,6 +140,7 @@ $(document).ready(function() {
         console.log('Added Judgement');
         $('#catRibbonsOne').html('<h5>Winner!</h5> Judgements: ' + (catOne.ct_jdgmts_cute + 1) + ', Wins: ' + (catOne.ct_wins_cute + 1));
         $('#catRibbonsTwo').html('<h5><br/></h5>Judgements: ' + (catTwo.ct_jdgmts_cute + 1) + ', Wins: ' + (catTwo.ct_wins_cute));
+        $('#refreshButtonDiv').toggleClass('hidden');
       })
       .fail(function() {
         console.log('Error in Posting');
@@ -166,11 +166,13 @@ $(document).ready(function() {
         console.log('Added Judgement')
         $('#catRibbonsTwo').html('<h5>Winner!</h5> Judgements: ' + (catTwo.ct_jdgmts_cute + 1) + ', Wins: ' + (catTwo.ct_wins_cute + 1));
         $('#catRibbonsOne').html('<h5><br/></h5>Judgements: ' + (catOne.ct_jdgmts_cute + 1) + ', Wins: ' + (catOne.ct_wins_cute));
+        $('#refreshButtonDiv').toggleClass('hidden');
       })
       .fail(function() {
         console.log('Error in Posting');
       });
   });
+
 }); //--------------<-document ready
 
 
